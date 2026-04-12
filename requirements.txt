@@ -1,0 +1,14 @@
+streamlit
+streamlit-lottie
+pandas
+numpy
+scikit-learn
+xgboost
+lightgbm
+catboost
+shap
+matplotlib
+seaborn
+joblib
+requests
+bcrypt
