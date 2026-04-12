@@ -28,15 +28,21 @@ import os
 import gdown
 
 def download_model():
-    # model.pkl
     if not os.path.exists("model.pkl"):
-        url_model = "https://drive.google.com/uc?id=1nRQflpK7mYzETX3WemMtLuLMKgWzvTwU"
-        gdown.download(url_model, "model.pkl", quiet=False)
+        gdown.download(
+            "https://drive.google.com/uc?id=1nRQflpK7mYzETX3WemMtLuLMKgWzvTwU",
+            "model.pkl",
+            quiet=False,
+            fuzzy=True   # 🔥 МАҢЫЗДЫ
+        )
 
-    # model_columns.pkl
     if not os.path.exists("model_columns.pkl"):
-        url_cols = "https://drive.google.com/uc?id=1jyF2Gubs4y6nETGok7oQbfLEpvxBK11w"
-        gdown.download(url_cols, "model_columns.pkl", quiet=False)
+        gdown.download(
+            "https://drive.google.com/uc?id=1jyF2Gubs4y6nETGok7oQbfLEpvxBK11w",
+            "model_columns.pkl",
+            quiet=False,
+            fuzzy=True   # 🔥 МАҢЫЗДЫ
+        )
 
 download_model()
 # ══════════════════════════════════════════
