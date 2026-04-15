@@ -27,22 +27,18 @@ except ImportError:
 import os
 import gdown
 
-def download_model():
-    if not os.path.exists("model.pkl"):
-        gdown.download(
-            "https://drive.google.com/uc?id=1nRQflpK7mYzETX3WemMtLuLMKgWzvTwU",
-            "model.pkl",
-            quiet=False,
-            fuzzy=True   # 🔥 МАҢЫЗДЫ
-        )
+def download_file(file_id, output):
+    if not os.path.exists(output):
+        url = f"https://drive.google.com/uc?export=download&id={file_id}"
+        try:
+            gdown.download(url, output, quiet=False)
+        except Exception as e:
+            print(f"⚠️ Error: {e}")
+            raise
 
-    if not os.path.exists("model_columns.pkl"):
-        gdown.download(
-            "https://drive.google.com/uc?id=1jyF2Gubs4y6nETGok7oQbfLEpvxBK11w",
-            "model_columns.pkl",
-            quiet=False,
-            fuzzy=True   # 🔥 МАҢЫЗДЫ
-        )
+def download_model():
+    download_file("1nRQflpK7mYzETX3WemMtLuLMKgWzvTwU", "model.pkl")
+    download_file("1jyF2Gubs4y6nETGok7oQbfLEpvxBK11w", "model_columns.pkl")
 
 download_model()
 # ══════════════════════════════════════════
